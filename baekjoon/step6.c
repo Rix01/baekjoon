@@ -97,10 +97,71 @@ void repeat(int n, char sent[])
 */
 
 // 1157
+/*
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
+	char word[1000000];
+	scanf("%s", word);
+	int len = strlen(word);
+	int alpha[26];
+	int max = 0, count=0;
+	char maxalpha;
+
+	// alpha 배열값 0으로 초기화
+	for (int i = 0; i < 26; i++)
+	{
+		alpha[i] = 0;
+	}
+
+	// 소문자
+	for (int i = 'a'; i <= 'z'; i++)
+	{
+		for (int j = 0; j < len; j++)
+		{
+			if ((int)word[j] == i)
+			{
+				alpha[i - 97] += 1;
+			}
+		}
+	}
+
+	// 대문자
+	for (int i = 'A'; i <= 'Z'; i++)
+	{
+		for (int j = 0; j < len; j++)
+		{
+			if ((int)word[j] == i)
+			{
+				alpha[i - 65] += 1;
+			}
+		}
+	}
+
+	// 가장 큰 값 찾기
+	for (int i = 0; i < 26; i++)
+	{
+		if (alpha[i] >= max)
+		{
+			max = alpha[i];
+			maxalpha = i+65;
+		}
+	}
+
+	// max값에 중복이 있는지 확인
+	for (int i = 0; i < 26; i++)
+	{
+		if (max == alpha[i])
+		{
+			count++;
+		}
+	}
+	if (count > 1) printf("?"); // max가 여러개일 경우
+	else printf("%c", maxalpha); // max가 하나일 경우
 
 	return 0;
 }
+*/
+
