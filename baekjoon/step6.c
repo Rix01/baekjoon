@@ -254,3 +254,64 @@ int main(void)
 }
 */
 
+// 2941
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	char croa[101];
+	scanf("%s", croa);
+	int len = strlen(croa);
+	int count = 0;
+
+	for (int i = 0; i < len; i++)
+	{
+		if (croa[i] == 'c' && croa[i + 1] == '=')
+		{
+			count++;
+			i++;
+		}
+		else if (croa[i] == 'c' && croa[i + 1] == '-')
+		{
+			count++;
+			i++;
+		}
+		else if (croa[i] == 'd' && croa[i + 1] == 'z' && croa[i + 2] == '=')
+		{
+			count++;
+			i += 2;
+		}
+		else if (croa[i] == 'd' && croa[i + 1] == '-')
+		{
+			count++;
+			i++;
+		}
+		else if (croa[i] == 'l' && croa[i + 1] == 'j')
+		{
+			count++;
+			i++;
+		}
+		else if (croa[i] == 'n' && croa[i + 1] == 'j')
+		{
+			count++;
+			i++;
+		}
+		else if (croa[i] == 's' && croa[i + 1] == '=')
+		{
+			count++;
+			i++;
+		}
+		else if (croa[i] == 'z' && croa[i + 1] == '=')
+		{
+			count++;
+			i++;
+		}
+		else count++;
+	}
+	printf("%d", count);
+
+	return 0;
+}
+*/
